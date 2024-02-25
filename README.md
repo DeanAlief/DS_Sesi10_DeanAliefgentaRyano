@@ -1,7 +1,7 @@
 # DS_Sesi10_DeanAliefgentaRyano
 Web Automation Advanced
 
-WebDriverIO with Cucumber
+WebDriverIO with Cucumber and Allure Reporting
 
 Test website used is `https://www.saucedemo.com/`
 
@@ -11,6 +11,7 @@ Test website used is `https://www.saucedemo.com/`
 3. Check Item Description test
 4. Positive Checkout test
 5. Negative Checkout test
+6. Logout test
 
 ### How to run this automation
 
@@ -20,3 +21,7 @@ Test website used is `https://www.saucedemo.com/`
 
 2. Run command for the Automation
    `npm run wdio " "`
+
+3. to generate report and open the report
+    `npm run generate-allure`
+    `npm run open-allure`

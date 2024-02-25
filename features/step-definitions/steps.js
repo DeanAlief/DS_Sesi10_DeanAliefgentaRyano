@@ -4,6 +4,7 @@ const LoginPage = require('../pageobjects/login.page.js');
 const HomePage = require('../pageobjects/home.page.js');
 const itemPage = require('../pageobjects/item.page.js');
 const additemPage = require('../pageobjects/additem.page.js');
+const loginPage = require('../pageobjects/login.page.js');
 
 Given(/^Dean is on the login page$/, async () => {
     await LoginPage.open()
@@ -47,4 +48,12 @@ Then(/^Dean proceeds to finish the transaction but leaving Last name field empty
 
 Then(/^Dean should see the error "(.*)"$/, async (dynamicMessage) => {
     await additemPage.emptyfieldError(dynamicMessage)
+})
+
+When(/^Dean clicked logout$/, async () => {
+    await loginPage.logout()
+})
+
+Then(/^Dean should see login page$/, async () => {
+    await loginPage.open()
 })

@@ -7,6 +7,8 @@ class LoginPage extends Page {
     get fieldPassword () { return $('#password'); }
     get buttonLogin () { return $('#login-button'); }
     errorLockedOutUser = (dynamicMessage) => $(`//h3[text()="${dynamicMessage}"]`)
+    get burgerbtn () {return $('#react-burger-menu-btn');}
+    get logoutbtn () {return $('#logout_sidebar_link');}
 
     async login (username) {
         await this.fieldUsername.waitForDisplayed({ timeout: 2500 });
@@ -18,6 +20,14 @@ class LoginPage extends Page {
     async validateLockedOutUserError (dynamicMessage) {
         await this.errorLockedOutUser(dynamicMessage).waitForDisplayed({ timeout: 2500 });
         await expect(this.errorLockedOutUser(dynamicMessage)).toBeDisplayed()
+    }
+
+    async logout() {
+        await this.burgerbtn.click();
+        await this.logoutbtn.click();
+        expect(browser).toHaveUrlContaining('/');
+        
+
     }
 
     open () {
