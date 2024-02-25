@@ -13,5 +13,3 @@ Feature: Swag Labs - Login
   Scenario: As a locked_out_user, I should get error message
     When Dean login with "locked_out_user" credential
     Then Dean should see error "Epic sadface: Sorry, this user has been locked out."
-
-
